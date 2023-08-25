@@ -38,3 +38,9 @@ body {
   text-align: left;
 
 }
+
+#section3 {
+  background-image: url('../../public/assets/images/doctor_section3.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+}

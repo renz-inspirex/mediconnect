@@ -13,7 +13,7 @@ const Section2Component = () => {
                 <p className={`${poppinesParagraph400.className} text-base text-white m-6 leading-[24px]`}>Scheduling appointments with doctors has never been easier. Take control of your healthcare journey and never miss another important appointment.</p>
                 <SearchBar />
            </div>
-           <img src="../assets/images/doctor.svg" />
+           <img src="../assets/images/doctor_section2.svg" />
         </div>
       </section>
     )
