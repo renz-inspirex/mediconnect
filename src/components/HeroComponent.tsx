@@ -1,12 +1,4 @@
-import { Raleway } from "next/font/google";
-
-const raleway_font = Raleway({subsets: ['latin']})
-
 const HeroComponent = () => {
-
-  const value = ''; 
-  const isfocused = false;
-  
   return (
     <div className="bg-secondary flex w-[100%] h-[815px] flex-col">
       <h1 className="text-white text-5xl w-[815px] h-[123px] text-center mx-auto  mt-[53px] font-bold font-sans proportional-nums lining-nums leading-[64px]">
