@@ -14,6 +14,8 @@ const config: Config = {
       'secondary': '#2536D0',
       'dirty-white': '#EFEDFD',
       'white': '#FFFFFF',
+      'dark': '#333333',
+      'ash': '#666666'
     },
     extend: {
       backgroundImage: {
