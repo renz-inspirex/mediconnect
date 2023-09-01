@@ -21,7 +21,7 @@ const NavbarComponent = () => {
           Health Directory
         </Link>
       </div>
-      <button className="bg-primary w-[112px] py-[10px] rounded-lg text-white text-sm">Let's Talk</button>
+      <button className="bg-primary w-[112px] py-[10px] rounded-lg text-white text-sm">Let&aspo;s Talk</button>
     </nav>
   )
 }

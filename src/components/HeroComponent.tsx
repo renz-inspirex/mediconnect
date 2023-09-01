@@ -7,7 +7,7 @@ const HeroComponent = () => {
       <div className="flex mt-[60px] justify-center gap-52">
          <div className="w-[710px] h-[384px] rounded-lg bg-white p-8 relative">
             <textarea className="w-full h-full outline-0 placeholder-black hero-textInput" placeholder={"Kindly describe your\nsymptoms here"}></textarea>
-            <button className="absolute bottom-6 right-6 py-4 px-24 bg-primary rounded-lg text-white ">Send</button>
+            <button className="absolute bottom-6 right-6 py-4 px-24 bg-primary rounded-lg text-white">Send</button>
          </div>
          <img src="../assets/images/doctor.svg" />
       </div>
