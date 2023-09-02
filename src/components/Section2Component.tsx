@@ -6,7 +6,7 @@ const poppinesParagraph400 = Poppins({ weight: '400', subsets: ['latin'], })
 
 const Section2Component = () => {
     return (
-      <section className="bg-secondary flex w-[100%] h-[815px] flex-col">
+      <section className="bg-secondary flex w-[100%] h-[704px] flex-col">
         <div className="flex mt-[60px] justify-center items-center gap-52 h-full">
            <div className="w-[710px] h-[384px]">
                 <h2 className={`${ralewayHeading700.className} text-5xl text-white m-4 leading-[63.99px]`}>Bridging the gap between Doctors and Patients</h2>

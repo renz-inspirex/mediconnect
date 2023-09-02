@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Roboto, Raleway } from "next/font/google"
 
 const ralewayHeading700 = Raleway({ weight: '700', subsets: ['latin'],  })
