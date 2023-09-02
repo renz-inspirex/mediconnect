@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 
 const options = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
 
@@ -6,12 +6,12 @@ function SearchBar() {
   const [searchTerm, setSearchTerm] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
 
-  const handleSearchChange = (event) => {
+  const handleSearchChange = (event: any) => {
     setSearchTerm(event.target.value);
     setShowDropdown(true);
   };
 
-  const handleOptionClick = (option) => {
+  const handleOptionClick = (option: any) => {
     setSearchTerm(option);
     setShowDropdown(false);
   };
