@@ -6,6 +6,7 @@ import Section2Component from '@/components/Section2Component'
 import Section3Component from '@/components/Section3Component'
 import BlogComponent from '@/components/BlogComponent'
 import DirectoryComponent from '@/components/DirectoryComponent'
+import FooterComponent from '@/components/FooterComponent'
 
 import { Inter } from 'next/font/google'
 
@@ -22,6 +23,7 @@ export default function Home() {
       <Section3Component />
       <BlogComponent />
       <DirectoryComponent />
+      <FooterComponent />
     </main>
   )
 }

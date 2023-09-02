@@ -16,6 +16,7 @@ const config: Config = {
       'dirty-white': '#EFEDFD',
       'white': '#FFFFFF',
       'dark': '#333333',
+      'dark-blue': '#1D1451',
       'ash': '#666666'
     },
     extend: {
