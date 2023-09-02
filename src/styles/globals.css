@@ -40,7 +40,19 @@ body {
 }
 
 #section3 {
-  background-image: url('../../public/assets/images/doctor_section3.png');
+  background-image:  linear-gradient(45deg,
+  rgba(255, 255, 255),
+  rgba(255, 255, 255, 0.1)), url('../../public/assets/images/doctor_section3.png');
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: contain;
+  background-position: right top;
+  position: relative;
+}
+
+#section3::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: 0; bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
 }
