@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 
 const BannerComponent = () => {
     return <div className="h-[80px] bg-primary flex">
