@@ -12,9 +12,11 @@ const config: Config = {
     colors: {
       'primary': '#ED880A',
       'secondary': '#2536D0',
+      'cream': '#f7f6ff',
       'dirty-white': '#EFEDFD',
       'white': '#FFFFFF',
       'dark': '#333333',
+      'dark-blue': '#1D1451',
       'ash': '#666666'
     },
     extend: {
