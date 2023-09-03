@@ -5,7 +5,7 @@ const robotoParagraph400 = Roboto({ weight: '400', subsets: ['latin'], })
 
 const DirectoryComponent = () => {
     return (
-      <section className="bg-cream flex w-[100%] h-[752px] justify-center items-center">
+      <section className="bg-cream flex w-[100%] h-[752px] justify-center items-center" id="healthDirectory">
         <div className="flex  w-[1232px] h-[528px]">
           <div className="bg-dirty-white w-2/4 w-full h-full flex items-center">
             <div className="ml-[100px]">

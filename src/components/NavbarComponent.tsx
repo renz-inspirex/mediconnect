@@ -12,13 +12,13 @@ const NavbarComponent = () => {
         <Link href="/" className="text-primary text-base">
           Home
         </Link>
-        <Link href="/" className="text-white text-base">
+        <Link href="#about" className="text-white text-base">
           About
         </Link>
-        <Link href="/" className="text-white text-base">
+        <Link href="#editorial" className="text-white text-base">
           Editorial
         </Link>
-        <Link href="/" className="text-white text-base">
+        <Link href="#healthDirectory" className="text-white text-base">
           Health Directory
         </Link>
       </div>

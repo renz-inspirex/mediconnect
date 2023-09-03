@@ -12,7 +12,7 @@ const HeroComponent = () => {
     setValue(e.target.value);
   };
 
-  const [placeHolderVisibility, setPlaceHolderVisibility] = useState(false);
+  const [placeHolderVisibility, setPlaceHolderVisibility] = useState(true);
 
   const [count, setCount] = useState(0);
 
