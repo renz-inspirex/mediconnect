@@ -57,7 +57,7 @@ const HeroComponent = () => {
             </div>
             ):
             (
-              <textarea className="w-full h-full outline-0 placeholder-black hero-textInput" value={value} onChange={handleTextareaChange}></textarea>
+              <textarea className="w-full h-4/5 outline-0 placeholder-black hero-textInput resize-none" value={value} onChange={handleTextareaChange} autoFocus></textarea>
             )
           }
             <button className="absolute bottom-6 right-6 py-4 px-24 bg-primary rounded-lg text-white " onClick={openModal} disabled={!value}>Send</button>
