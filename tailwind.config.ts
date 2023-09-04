@@ -18,8 +18,12 @@ const config: Config = {
       'dark': '#333333',
       'dark-blue': '#1D1451',
       'ash': '#666666',
+      'dark-ash': '#87898E',
+      'darker-ash': '#23262F',
+      'lighter-grey': '#87898E',
       'light-blue': '#A8AFF0',
       'light-grey': '#FCFCFD',
+      'input-grey': '#DFDFE6',
     },
     extend: {
       backgroundImage: {
