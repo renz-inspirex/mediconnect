@@ -1,6 +1,6 @@
 import { useState, useEffect, ChangeEvent } from "react"
 import { Roboto, Raleway } from "next/font/google"
-// import HeroOutputModalComponent from "./HeroOutputModalComponent"
+import HeroOutputModalComponent from "./HeroOutputModalComponent"
 
 const ralewayHeading700 = Raleway({ weight: '700', subsets: ['latin'], })
 const robotoParagraph400 = Roboto({ weight: '400', subsets: ['latin'], })
@@ -42,7 +42,7 @@ const HeroComponent = () => {
 
   return (
     <div className="bg-secondary flex w-[100%] h-[815px] flex-col">
-      {/* <HeroOutputModalComponent isOpen={isOpen} setIsOpen={setIsOpen} /> */}
+      <HeroOutputModalComponent isOpen={isOpen} setIsOpen={setIsOpen} />
       <h1 className="text-white text-5xl w-[815px] h-[123px] text-center mx-auto  mt-[53px] font-bold font-sans proportional-nums lining-nums leading-[64px]">
         MedConnect - online medical hub for everyone
       </h1>
