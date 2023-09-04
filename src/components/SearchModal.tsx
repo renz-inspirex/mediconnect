@@ -10,7 +10,7 @@ const interParagram400 = Inter({ weight: '400', subsets: ['latin'], })
 const SearchModal = (props: SearchModalProps) => {
 
     function closeModal() {
-        props.setIsOpen(true)
+        props.setIsOpen(false)
     }
 
     function openModal() {
