@@ -6,7 +6,7 @@ const robotoParagraph400 = Roboto({ weight: '400', subsets: ['latin'], })
 
 const BlogComponent = () => {
     return (
-      <div className="bg-secondary flex w-[100%] h-[896px] flex-col">
+      <div className="bg-secondary flex w-[100%] h-[896px] flex-col" id="editorial">
         <div className="text-center mt-[66px]">
             <h3 className={`${ralewayHeading700.className} text-5xl text-white leading-[63.99px] mb-1.5`}>
                 MedConnect Editorial
