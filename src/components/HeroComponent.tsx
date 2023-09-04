@@ -1,6 +1,8 @@
 import { useState, useEffect, ChangeEvent } from "react"
 import { Roboto, Raleway } from "next/font/google"
 import HeroOutputModalComponent from "./HeroOutputModalComponent"
+import { useRecoilState, useRecoilValue } from "recoil"
+import { isMedicineModalOpen, symptoms } from "@/stores/modal.store"
 
 const ralewayHeading700 = Raleway({ weight: '700', subsets: ['latin'], })
 const robotoParagraph400 = Roboto({ weight: '400', subsets: ['latin'], })
@@ -20,15 +22,14 @@ const HeroComponent = () => {
   const [count, setCount] = useState(0);
 
   // Controling modal visibility
-  let [isOpen, setIsOpen] = useState(false)
+  const [, setIsOpen] = useRecoilState(isMedicineModalOpen);
+  const [, setSymptoms] = useRecoilState(symptoms);
 
-  function closeModal() {
-    setIsOpen(false)
+  const getInputedValue = () => {
+      setSymptoms(value)
+      setIsOpen(true)
   }
 
-  function openModal() {
-    setIsOpen(true)
-  } 
 
   useEffect(() => {
     // Start the interval when the component mounts
@@ -42,7 +43,7 @@ const HeroComponent = () => {
 
   return (
     <div className="bg-secondary flex w-[100%] h-[815px] flex-col">
-      <HeroOutputModalComponent isOpen={isOpen} setIsOpen={setIsOpen} />
+      
       <h1 className="text-white text-5xl w-[815px] h-[123px] text-center mx-auto  mt-[53px] font-bold font-sans proportional-nums lining-nums leading-[64px]">
         MedConnect - online medical hub for everyone
       </h1>
@@ -60,7 +61,7 @@ const HeroComponent = () => {
               <textarea className="w-full h-4/5 outline-0 placeholder-black hero-textInput resize-none" value={value} onChange={handleTextareaChange} autoFocus></textarea>
             )
           }
-            <button className="absolute bottom-6 right-6 py-4 px-24 bg-primary rounded-lg text-white " onClick={openModal} disabled={!value}>Send</button>
+            <button className="absolute bottom-6 right-6 py-4 px-24 bg-primary rounded-lg text-white " onClick={getInputedValue} disabled={!value}>Send</button>
          </div>
          <img src="../assets/images/doctor.svg" />
       </div>
