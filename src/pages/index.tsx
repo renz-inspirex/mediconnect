@@ -23,7 +23,6 @@ export default function Home() {
       <DirectoryComponent />
       <FooterComponent />
       <HeroOutputModalComponent />
-      <SearchResultOutput />
     </main>
   )
 }
