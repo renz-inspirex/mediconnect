@@ -12,7 +12,7 @@ const NavbarComponent = () => {
         <Link href="/" className="text-primary text-base">
           Home
         </Link>
-        <Link href="/" className="text-white text-base">
+        <Link href="#section3" className="text-white text-base">
           About
         </Link>
         <Link href="#editorial" className="text-white text-base">
