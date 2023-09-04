@@ -12,7 +12,7 @@ const NavbarComponent = () => {
         <Link href="/" className="text-primary text-base">
           Home
         </Link>
-        <Link href="#about" className="text-white text-base">
+        <Link href="/" className="text-white text-base">
           About
         </Link>
         <Link href="#editorial" className="text-white text-base">
@@ -22,7 +22,7 @@ const NavbarComponent = () => {
           Health Directory
         </Link>
       </div>
-      <button className="bg-primary w-[112px] py-[10px] rounded-lg text-white text-sm">Let's Talk</button>
+      <button className="bg-primary w-[112px] py-[10px] rounded-lg text-white text-sm">{`Let's Talk`}</button>
     </nav>
   )
 }
