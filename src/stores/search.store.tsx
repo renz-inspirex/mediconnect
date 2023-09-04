@@ -21,7 +21,7 @@ export const getSearchResults = selector({
 
 
 export const searchValueSelector = selector({
-  key: "searchValue",
+  key: "searchValueSelector",
   get: ({get}) => {
     return get(searchValue)
   },

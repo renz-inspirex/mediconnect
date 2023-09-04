@@ -77,7 +77,7 @@ const HeroOutputModalComponent = () => {
                     <p
                       className={`${poppinsHeading400.className} text-base text-ash leading-6`}
                     >
-                      {!!solution.length && !isFetching && solution.map(sentence => <p className="pb-2">{sentence}</p>)}
+                      {!!solution.length && !isFetching && solution.map((sentence: string, index: number) => <p key={`solution-${index}`} className="pb-2">{sentence}</p>)}
                       {(!!!solution.length || isFetching)&& (
                         <p>Finding possible cause...</p>
                       )}

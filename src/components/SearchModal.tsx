@@ -92,7 +92,7 @@ const SearchModal = (props: SearchModalProps) => {
                   <div className="mt-[32px]">
                     
                     <div id="searchResults">
-                      {!!doctors.length && doctors.map(doctor => <SearchResultOutput doctor={doctor} />)}
+                      {!!doctors.length && doctors.map((doctor: any, index: number) => <SearchResultOutput key={`doctor-${index}`} doctor={doctor} />)}
                     </div>
                   </div>
                 </Dialog.Panel>
