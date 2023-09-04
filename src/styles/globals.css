@@ -29,15 +29,17 @@ body {
 }
 
 .hero-textInput::placeholder {
+  content: 'hello';
   font-family: 'Raleway', sans-serif;
   color: #333!important;
   font-size: 32px;
   font-weight: 700;
   line-height: 43px;
   letter-spacing: 0em;
-  text-align: left;
-
+  text-align: left
 }
+
+
 
 #section3 {
   background-image:  linear-gradient(45deg,

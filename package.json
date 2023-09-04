@@ -2,7 +2,7 @@
   "name": "mediconnect",
   "version": "0.1.0",
   "private": true,
-  "engineStrict" : true,
+  "engineStrict": true,
   "engines": {
     "node": ">=18.0"
   },
@@ -13,6 +13,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "@types/node": "20.5.3",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
