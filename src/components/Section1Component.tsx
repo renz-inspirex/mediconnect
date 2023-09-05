@@ -9,11 +9,12 @@ const poppinesParagraph400 = Poppins({ weight: '400', subsets: ['latin'], })
 
 const Section1Component = () => {
 
-  const [, setIsOpen] = useRecoilState(isSearchModalShowing);
+  const [isOpen, setIsOpen] = useRecoilState(isSearchModalShowing);
   const openModal = () => {
     setIsOpen(true)
   }
 
+  console.log({isOpen})
   return (
     <section className="bg-dirty-white flex w-[100%] h-[815px] flex-col">
       <div className="flex mt-[60px] justify-center items-center gap-[81px] h-full">

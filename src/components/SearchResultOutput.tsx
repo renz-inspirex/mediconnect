@@ -53,7 +53,7 @@ const SearchResultOutput = (props: any) => {
       <div className="flex">
         <div className="w-[48px] h-[48px] overflow-hidden">
           <img
-            src={`https://static.seriousmd.com/${doctor?.image.replace(
+            src={`https://static.seriousmd.com/${doctor?.image?.replace(
               /^\//g,
               ""
             )}`}

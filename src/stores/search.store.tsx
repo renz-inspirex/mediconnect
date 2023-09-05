@@ -25,4 +25,5 @@ export const searchValueSelector = selector({
   get: ({get}) => {
     return get(searchValue)
   },
+  set: ({set}, newvalue) => set(searchValue, newvalue)
 })

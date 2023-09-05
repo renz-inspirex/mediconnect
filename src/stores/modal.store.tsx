@@ -12,13 +12,13 @@ export const symptoms = atom({
 })
 
 
-export const getPossibleMedicine = selector({
-  key: 'getPossibleMedicine',
-  get: async ({get}) => {
-    const _symptoms = get(symptoms)
+// export const getPossibleMedicine = selector({
+//   key: 'getPossibleMedicine',
+//   get: async ({get}) => {
+//     const _symptoms = get(symptoms)
 
-    const medicinesService = MedicineService.getInstance()
-    const result = await medicinesService.getPossibleMedicine(_symptoms)
-    return { result: result.data, symptoms: _symptoms}
-  }
-})
+//     const medicinesService = MedicineService.getInstance()
+//     const result = await medicinesService.getPossibleMedicine(_symptoms)
+//     return { result: result.data, symptoms: _symptoms}
+//   }
+// })

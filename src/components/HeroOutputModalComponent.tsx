@@ -1,6 +1,5 @@
 import {MedicineService} from "@/services/medicine.service"
 import {
-  getPossibleMedicine,
   isMedicineModalOpen,
   symptoms,
 } from "@/stores/modal.store"

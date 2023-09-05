@@ -1,52 +1,59 @@
-import { Dialog, Transition } from '@headlessui/react'
-import { Inter, Poppins } from 'next/font/google'
-import { Fragment, useEffect, useState } from 'react'
-import SearchResultOutput from './SearchResultOutput'
-import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from 'recoil'
-import { isSearchModalShowing, searchValueSelector } from '@/stores/search.store'
-import { DoctorsService } from '@/services/doctors.service'
+import {Dialog, Transition} from "@headlessui/react"
+import {Inter, Poppins} from "next/font/google"
+import {Fragment, useEffect, useState} from "react"
+import SearchResultOutput from "./SearchResultOutput"
+import {useRecoilState, useRecoilValue, useRecoilValueLoadable} from "recoil"
+import {isSearchModalShowing, searchValueSelector} from "@/stores/search.store"
+import {DoctorsService} from "@/services/doctors.service"
 
+const poppinesHeading700 = Poppins({weight: "700", subsets: ["latin"]})
+const interParagram400 = Inter({weight: "400", subsets: ["latin"]})
 
-const poppinesHeading700 = Poppins({ weight: '700', subsets: ['latin'], })
-const interParagram400 = Inter({ weight: '400', subsets: ['latin'], })
+const SearchModal = () => {
+  const [isOpen, setIsOpen] = useRecoilState(isSearchModalShowing)
+  const [specializations, setSpecialization] = useRecoilState(searchValueSelector)
+  const [doctors, setDoctors] = useState([])
+  const [isFetching, updateFetchingStatus] = useState(false)
 
-const SearchModal = (props: SearchModalProps) => {
+  function closeModal() {
+    setIsOpen(false)
+    setDoctors([])
+  }
 
-    //https://static.seriousmd.com/profile_pictures
-    const [isOpen, setIsOpen] = useRecoilState(isSearchModalShowing)
-    const specializations = useRecoilValue(searchValueSelector)
-    const [doctors, setDoctors] = useState([])
-    const [isFetching, updateFetchingStatus] = useState(false)
-  
-    function closeModal() {
-      setIsOpen(false)
-      setDoctors([])
+  const getDoctors = async () => {
+    try {
+      updateFetchingStatus(true)
+      const doctorService = DoctorsService.getInstance()
+      const result = await doctorService.getDoctors(specializations)
+      const data = result.data
+      const doc = JSON.parse(data.payload.doctors).hits.hits.map(
+        (val: any) => val._source
+      )
+      setDoctors(doc)
+      updateFetchingStatus(false)
+      console.log(doc)
+    } catch {}
+  }
+
+  const updateSpecialization = (event: any) => {
+    setSpecialization(event?.target?.value)
+  }
+
+  useEffect(() => {
+    if (isOpen && !!specializations) {
+      getDoctors()
     }
-  
-    const getDoctors = async () => {
-      try {
-        updateFetchingStatus(true)
-        const doctorService = DoctorsService.getInstance()
-        const result = await doctorService.getDoctors(specializations)
-        const data = result.data
-        const doc = JSON.parse(data.payload.doctors).hits.hits.map((val: any) => val._source)
-        setDoctors(doc)
-        updateFetchingStatus(false)
-        console.log(doc)
-      } catch {
-  
-      }
-     
-    }
-  
-    useEffect(() => {
-      if (isOpen && !!specializations) {
-        getDoctors()
-      }
-    }, [isOpen])
+  }, [isOpen])
 
-    return <div>
-        <Transition appear show={isOpen} as={Fragment}>
+  useEffect(() => {
+    if (isOpen && !!specializations) {
+      getDoctors()
+    }
+  }, [specializations])
+
+  return (
+    <div>
+      <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
@@ -72,9 +79,17 @@ const SearchModal = (props: SearchModalProps) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-[70vh] max-h-[80vh] transform overflow-y-auto rounded-[15px] bg-white  text-left align-middle shadow-xl transition-all px-[31px]">
-                       <div className='sticky top-0 bg-white  py-6'>
-                            <input type="text" name="searchinput" id="searchinput" placeholder='Pick A Specialty Or Type Your Doctor’s Name' className='w-full h-14 rounded-2xl border-2 border-input-grey p-4 mb-6'/>
-                            {/* <div className='flex gap-[10px] mb-[32px]'>
+                  <div className="sticky top-0 bg-white  py-6">
+                   <input
+                      type="text"
+                      name="searchinput"
+                      id="searchinput"
+                      placeholder="Pick A Specialty Or Type Your Doctor’s Name"
+                      className="w-full h-14 rounded-2xl border-2 border-input-grey p-4 mb-6"
+                      onChange={updateSpecialization}
+                      value={specializations}
+                    />
+                    {/* <div className='flex gap-[10px] mb-[32px]'>
                               <div className='relative p-0 w-full h-14 rounded-2xl border-2 border-input-grey p-4'>
                                   <input type="text" name="location" placeholder='Select Location' className='w-full h-full rounded-2xl p-4'/>
                                   <img src="../assets/images/location.svg" alt="Location" className='absolute right-2 bottom-[15px] w-[24px] h-[24px] ' />
@@ -84,15 +99,29 @@ const SearchModal = (props: SearchModalProps) => {
                                   <img src="../assets/images/filter.svg" alt="Filter" className='absolute right-2 bottom-[15px] w-[24px] h-[24px] ' />
                               </div>
                             </div> */}
-                            <div className='flex justify-between'>
-                              <p className={`${poppinesHeading700.className} text-[23px] leading-[32px]`}>{specializations}</p>
-                              <img src="../assets/images/closeModalBtn.svg" alt="See More" />
-                            </div>
-                       </div>
+                    {!!specializations && (
+                      <div className="flex justify-between">
+                        <p
+                          className={`${poppinesHeading700.className} text-[23px] leading-[32px]`}
+                        >
+                          {specializations}
+                        </p>
+                        <img
+                          src="../assets/images/closeModalBtn.svg"
+                          alt="See More"
+                        />
+                      </div>
+                    )}
+                  </div>
                   <div className="mt-[32px]">
-                    
                     <div id="searchResults">
-                      {!!doctors.length && doctors.map((doctor: any, index: number) => <SearchResultOutput key={`doctor-${index}`} doctor={doctor} />)}
+                      {!!doctors.length &&
+                        doctors.map((doctor: any, index: number) => (
+                          <SearchResultOutput
+                            key={`doctor-${index}`}
+                            doctor={doctor}
+                          />
+                        ))}
                     </div>
                   </div>
                 </Dialog.Panel>
@@ -102,11 +131,7 @@ const SearchModal = (props: SearchModalProps) => {
         </Dialog>
       </Transition>
     </div>
-}
-
-type SearchModalProps = {
-    isOpen: boolean,
-    setIsOpen: Function
+  )
 }
 
 export default SearchModal
