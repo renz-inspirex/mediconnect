@@ -30,6 +30,13 @@ const HeroComponent = () => {
       setIsOpen(true)
   }
 
+  const onKeyPress = (e: any) => {
+    if(e.keyCode == 13 && e.shiftKey == false) {
+      e.preventDefault();
+      getInputedValue()
+    }
+  }
+
 
   useEffect(() => {
     // Start the interval when the component mounts
@@ -58,7 +65,7 @@ const HeroComponent = () => {
             </div>
             ):
             (
-              <textarea className="w-full h-4/5 outline-0 placeholder-black hero-textInput resize-none" value={value} onChange={handleTextareaChange} autoFocus></textarea>
+              <textarea className="w-full h-4/5 outline-0 placeholder-black hero-textInput resize-none" value={value} onChange={handleTextareaChange} autoFocus onKeyDown={onKeyPress}></textarea>
             )
           }
             <button className="absolute bottom-6 right-6 py-4 px-24 bg-primary rounded-lg text-white " onClick={getInputedValue} disabled={!value}>Send</button>
