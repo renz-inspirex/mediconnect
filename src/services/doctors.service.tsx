@@ -16,9 +16,9 @@ export class DoctorsService extends HttpClient {
 
   getDoctors = (
     specializations?: string,
-    location?: string,
+    location: string = 'Cebu City',
     hospital?: string,
-    limit: number = 10,
+    limit: number = 30,
     offset: number = 0
   ) =>
     this.instance.get<any>("/directory/getdoctors", {
